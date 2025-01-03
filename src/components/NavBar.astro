@@ -14,8 +14,8 @@ const navItems = [
       <!-- Menú para pantallas grandes -->
       <ul class="hidden lg:flex space-x-4">
         {navItems.map((item) => (
-          <li class="text-xl font-medium">
-            <a href={item.href} class="hover:text-gray-300">{item.text}</a>
+          <li class="text-xl font-medium transition duration-300 ease-in-out hover:text-yellow-300">
+            <a href={item.href}>{item.text}</a>
           </li>
         ))}
       </ul>
@@ -28,7 +28,7 @@ const navItems = [
       </button>
     
     <!-- Menú móvil -->
-    <div id="mobile-menu" class="hidden mt-2 md:mt-0 animate-fadeIn  fadeOut rounded-md bg-gradient-to-tl from-gray-900 to-gray-600  lg:hidden absolute top-16 left-0 w-full  z-50">
+    <div id="mobile-menu" class="hidden mt-2 animate-fadeIn  fadeOut rounded-md bg-gradient-to-tl from-gray-900 to-gray-600  lg:hidden absolute top-16 left-0 w-full  z-50">
       <ul class="py-2  flex items-center flex-col">
         {navItems.map((item) => (
           <li class="lista text-xl font-medium">

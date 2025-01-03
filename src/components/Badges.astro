@@ -14,7 +14,7 @@ const { content, direction = 'mailto:ergmbusiness@gmail.com'}: Props = Astro.pro
       <span
         class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
       ></span>
-      <div class="inline-flex  hover:bg-white hover:text-slate-800 items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap">
+      <div class="inline-flex transition duration-300 ease-in-out hover:bg-white hover:text-slate-800 items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap">
         <a href={direction} target="_blank" class="flex items-center space-x-2 rounded-2xl p-2">
             <slot />
             <p>{content}</p>
