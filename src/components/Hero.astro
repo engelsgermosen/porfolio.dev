@@ -1,0 +1,34 @@
+---
+import Email from "../icons/email.astro"
+import Badges from "./Badges.astro"
+import Linkedin from "../icons/linkedin.astro"
+---
+
+<div id="home" class="flex mt-28 py-8 gap-16 md:gap-8 w-full flex-wrap-reverse md:flex-nowrap lg:gap-24 items-center justify-center md:p-8 md:py-44 lg:py-44">
+    <div>
+        <div class="px-4 md:max-w-96 lg:max-w-2xl">
+            <h1 class="text-4xl md:text-5xl pb-8 text-shadow">Hey soy Engels</h1>
+            <p class="text-xl md:text-2xl lg:text-3xl">
+                <strong class="text-yellow-500">Desarrollador Full-Stack y diseñador web con una gran pasión por el aprendizaje.</strong>
+            </p>
+            <div class="flex gap-4 pt-12">
+                <Badges content="Contactame">
+                    <Email class="size-6" />   
+                </Badges>
+                <Badges content="LinkedIn" direction="https://www.linkedin.com/in/engels-germosen-135065344/">
+                    <Linkedin class="size-6" />   
+                </Badges>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <img class="shadow-lg shadow-white size-44 md:size-72 lg:size-96 rounded-full" src="/logo.jpeg" alt="Engels Germosen" />
+    </div>
+</div>
+
+<style>
+    .text-shadow {
+      text-shadow: 2px 2px 2px #fff
+    }
+  </style>

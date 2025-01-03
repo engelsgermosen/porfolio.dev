@@ -1,0 +1,72 @@
+---
+import Mail from "../icons/mail.astro"
+
+---
+
+<div id="contacto" class="flex flex-col mt-16 md:mt-0 gap-12 p-4 mb-16 md:px-[5.5rem] lg:px-16 mx-auto w-screen max-w-7xl">
+    <section class="flex gap-4 items-center">
+        <Mail class="size-7"/>
+        <h1 class="text-2xl">Contacto</h1>
+    </section>
+    <main class="flex flex-wrap lg:flex-nowrap justify-between gap-8 md:gap-16  p-4 lg:p-8 rounded w-full shadow-lg shadow-slate-300 bg-slate-900/70">
+       <form id="form" class="w-full p-4 flex flex-col gap-4">
+            <div class="flex flex-col gap-2">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" required name="name" class="p-2 pl-4 h-12 rounded-lg bg-slate-600 text-white/80"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="email">Correo</label>
+                <input type="email" id="email" required name="email" class="p-2 pl-4 h-12 rounded-lg bg-slate-600 text-white/80"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message"  required class="p-2 pl-4 h-40 resize-none rounded-lg bg-slate-600 text-white/80"></textarea>
+            </div>
+            <button  class="bg-yellow-500 hover:bg-yellow-500/80 active:translate-y-2
+            shadow-md shadow-white transition duration-400 ease-in-out text-xl font-semibold w-full mt-4 text-center p-2 rounded-lg text-white/80">Enviar</button>
+       </form>
+    </main>
+</div>
+
+<script>
+
+import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
+
+    (function () {
+      emailjs.init("h44gOczMwSZS3CZwA"); // Reemplaza con tu User ID de emailjs
+    })();
+  
+    const form = document.getElementById("form");
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+  
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+      };
+  
+      try {
+        Swal.fire({
+            title: '¡Éxito!',
+            text: 'El correo se ha enviado correctamente.',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+            timer: 3000,
+            timerProgressBar: true, 
+            willClose: () => {
+                console.log('Alerta cerrada después de 3 segundos');
+            }
+        });
+        await emailjs.send("service_47odb7x", "template_gdrw09o", data);
+        form?.reset();
+
+      } catch (error) {
+        console.error(error);
+        alert("Error al enviar el correo");
+      }
+    };
+  </script>
+  

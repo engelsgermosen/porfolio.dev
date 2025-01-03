@@ -1,22 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Porfolio de Engels - Desarrollador y Programador Web</title>
 	</head>
-	<body>
-		<slot />
+	<body class="w-screen">
+		<div class="bg-gradient-to-t from-gray-700 via-gray-900 to-black flex flex-col min-h-screen w-screen items-center">
+			<slot />
+		</div>
 	</body>
 </html>
 
 <style>
 	html,
 	body {
+		color: rgb(255, 255, 255);
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		padding: 0;
+		box-sizing: border-box;
+		scroll-behavior: smooth;
 	}
 </style>

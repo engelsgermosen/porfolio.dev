@@ -1,0 +1,47 @@
+---
+import Code from "../icons/code.astro"
+import ProjectItem from "./ProjectItem.astro"
+
+
+const Project = [
+{
+    title: "EGmarket - Mira las 100 criptomonedas mas importantes",
+    description: "Pagina web paara ver las 100 criptomonedas mas importantes del mercado, con su respectivo precio, capitalizacion de mercado y volumen de 24 horas",
+    tecno: ["HTML","Css", 'JS' ],
+    image: "/egMarket.png",
+    github: "https://github.com/engelsgermosen/CriptoApp.git",
+    link: "https://egmarket.vercel.app/"
+},
+{
+    title: "Age-Calculator - Calcula tu edad",
+    description: "Pagina web para calcular tu edad, solo tienes que ingresar tu fecha de nacimiento y listo",
+    tecno: ["React","Tailwind" ],
+    image: "/age-calculator.png",
+    github: "https://github.com/engelsgermosen/age-calculator.git",
+    link: "https://age-calculator-eg.vercel.app/"
+},
+{
+    title: "WeatherApp - Aplicacion del clima",
+    description: "Pagina web para ver el clima de cualquier ciudad del mundo, solo tienes que ingresar el nombre de la ciudad y listo",
+    tecno: ["HTML","Css","JS" ],
+    image: "/weatherApp.png",
+    github: "https://github.com/engelsgermosen/WeatherApp.git",
+    link: "https://weather-app-eg.vercel.app/"
+}
+]
+---
+
+<div id="project" class="flex flex-col gap-8 p-4 py-8 md:py-8 md:px-[5.5rem] lg:px-16 mx-auto w-screen max-w-7xl">
+    <section class="flex gap-4 items-center">
+        <Code class="size-7"/>
+        <h1 class="text-2xl">Proyectos</h1>
+    </section>
+
+    <main class="flex flex-col gap-4 md:gap-16">
+        {
+            Project.map((project) =>(
+                <ProjectItem {...project} />
+            ))
+        }
+    </main>
+</div>

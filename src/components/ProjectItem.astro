@@ -1,0 +1,79 @@
+---
+import Badges from './Badges.astro';
+import Github from '../icons/github.astro';
+import Preview from '../icons/preview.astro';
+import React from '../icons/react.astro';
+import Tailwind from '../icons/tailwind.astro';
+import Html from '../icons/html.astro';
+import Css from '../icons/css.astro';
+import Js from '../icons/js.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  link?: string;
+  image?: string;
+  github?: string;
+  tecno: string[];
+}
+
+const { title, description, link, image,github,tecno } = Astro.props;
+
+const tec = [
+    {
+        name: "React",
+        color: "bg-slate-800",
+        icon: React,
+    },
+    {
+        name: 'Tailwind',
+        color: 'bg-[#1E293B]',
+        icon: Tailwind,
+    },
+    {
+        name: 'HTML',
+        color: 'bg-gray-800',
+        icon: Html,
+    },
+    {
+        name: 'Css',
+        color: 'bg-slate-800',
+        icon: Css,
+    },
+    {
+        name: 'JS',
+        color: 'bg-gray-900',
+        icon: Js,
+    },
+
+]
+---
+
+<article class="flex flex-col lg:flex-row p-4 rounded gap-4 lg:gap-12 w-full bg-gray-700 shadow-md md:shadow-lg shadow-slate-400">
+    <div class="w-full group-hover:-translate-y-1 lg:w-1/2 h-full flex items-center">
+        <img class="rounded" src={image}/>
+    </div>
+    <div class="flex justify-center w-full lg:w-1/2 flex-col gap-4 p-2">
+        <h1 class="text-2xl">{title}</h1>
+        <div class="flex gap-2 flex-wrap">
+            {tecno.map((tecnoItem) => {
+                const tech = tec.find(x => x.name === tecnoItem);
+                return tech ? (
+                    <div class={`flex items-center ${tech.color} py-1 px-4 rounded-3xl`} >
+                        <tech.icon class="size-4" />
+                        <span class="ml-2">{tech.name}</span>
+                    </div>
+                ) : null;
+            })}
+        </div>
+        <h3>{description}</h3>
+        <div class="flex gap-4">
+            <Badges direction={github} content="Code">
+                <Github class="size-6" />   
+            </Badges>
+            <Badges content="Preview" direction={link}>
+                <Preview class="size-6" />   
+            </Badges>
+        </div>
+    </div>
+</article>

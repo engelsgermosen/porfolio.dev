@@ -1,0 +1,64 @@
+---
+import Css from "../icons/css.astro"
+import Html from "../icons/html.astro"
+import Js from "../icons/js.astro"
+import React from "../icons/react.astro"
+import Skill from "../icons/skills.astro"
+import Tailwind from "../icons/tailwind.astro"
+import CS from "../icons/cs.astro"
+import mssql from "../icons/mssql.astro"
+import DotNet from "../icons/puntoNet.astro"
+
+const habilidades = [
+{
+        name: 'HTML',
+        icon: Html,
+    },
+    {
+        name: 'CSS',
+        icon: Css,
+    },
+    {
+        name: 'JS',
+        icon: Js,
+    },
+    {
+        name: "React",
+        icon: React,
+    },
+    {
+        name: 'Tailwind',
+        icon: Tailwind,
+    },
+    {
+        name: 'C#',
+        icon: CS,
+    },
+    {
+        name: '.NET',
+        icon: DotNet,
+    },
+    {
+        name: 'MSSQL',
+        icon: mssql,
+    },
+]
+---
+
+<div id="skills" class="flex flex-col py-16 md:my-40 gap-12 p-4 md:py-8 md:px-[5.5rem] lg:px-16 mx-auto w-screen max-w-7xl">
+    <section class="flex gap-4 items-center">
+        <Skill class="size-7"/>
+        <h1 class="text-2xl">Skills</h1>
+    </section>
+
+    <main class="flex gap-20 justify-center flex-wrap max-w-[600px] mx-auto">
+        {
+            habilidades.map((habilidades) =>(
+                <div class="flex flex-col gap-4 items-center">
+                    <habilidades.icon class="size-20"/>
+                    <p class="text-2xl">{habilidades.name}</p>
+                </div>
+            ))
+        }
+    </main>
+</div>
