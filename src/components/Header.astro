@@ -10,3 +10,21 @@ import NavBar from './NavBar.astro';
   </nav>
 </header>
 
+<style>
+  header{
+    transform: translateY(-100%);
+    animation: entry 1s linear forwards;
+  }
+
+
+
+
+  @keyframes entry {
+  
+    100% {
+      transform: translateY(0);
+    }
+    
+  }
+</style>
+
