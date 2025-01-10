@@ -17,8 +17,12 @@ import NavBar from './NavBar.astro';
   }
 
   @keyframes entry {
+    from{
+      opacity: .5;
+    }
     100% {
       transform: translateY(0);
+      opacity: 1;
     }
   }
 </style>
